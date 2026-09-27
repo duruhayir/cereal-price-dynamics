@@ -1,0 +1,15 @@
+metric_key,display_label,value_numeric,unit,display_value,source_phase,source_file,source_field_or_formula,denominator_or_scope,sort_order
+raw_scanner_observations,Raw scanner observations,6602582,count,"6,602,582",Phase 1,data/processed/audit/panel_summary.csv,movement_rows,All raw cereal movement rows,1
+original_upcs,Original UPCs,490,count,490,Phase 1,data/processed/audit/upc_metadata_summary.csv,unique_upc_count,Original metadata universe,2
+stores,Stores,93,count,93,Phase 1,data/processed/audit/panel_summary.csv,unique_stores,Distinct stores in raw movement data,3
+raw_min_week,First raw week,1,week_number,Week 1,Phase 1,data/processed/audit/panel_summary.csv,min_week,Raw data coverage,4
+raw_max_week,Last raw week,399,week_number,Week 399,Phase 1,data/processed/audit/panel_summary.csv,max_week,Raw data coverage,5
+raw_observed_weeks,Observed raw weeks,367,count,367,Phase 1,data/processed/audit/panel_summary.csv,unique_weeks,Raw data coverage; panel is unbalanced,6
+index_observed_weeks,Observed index weeks,366,count,366,Phase 3,data/processed/indices/weekly_price_indices.csv,distinct week,Five contiguous index segments,7
+contiguous_segments,Contiguous index segments,5,count,5,Phase 3,data/processed/indices/weekly_price_indices.csv,distinct segment_id,No globally missing week is bridged,8
+eligible_comparisons,Eligible weekly comparisons,4508667,count,"4,508,667",Phase 4,data/processed/rigidity/price_change_summary.csv,eligible_comparison_count,"Same store, UPC, and consecutive calendar week",9
+weekly_price_change_frequency,Weekly price-change frequency,0.15899089464801891,share,15.8991%,Phase 4,data/processed/rigidity/price_change_summary.csv,price_change_frequency,All eligible consecutive comparisons,10
+weekly_unchanged_share,Weekly unchanged share,0.84100910535198092,share,84.1009%,Phase 4,data/processed/rigidity/price_change_summary.csv,unchanged_count / eligible_comparison_count,All eligible consecutive comparisons,11
+promotion_share_of_price_changes,Price changes involving a documented promotion,0.52959738406360146,share,52.9597%,Phase 4,data/processed/rigidity/promotion_price_movement_share.csv,share,Either adjacent week is DOCUMENTED_PROMOTION,12
+promotion_share_of_absolute_movement,Absolute movement involving a documented promotion,0.72562468642555655,share,72.5625%,Phase 4,data/processed/rigidity/promotion_price_movement_share.csv,share,Share of total absolute log price movement,13
+median_observed_spell_weeks,Median observed price spell,2,weeks,2 weeks,Phase 4,data/processed/rigidity/price_spell_summary.csv,median_observed_spell_length,Observed duration; censoring remains visible,14
